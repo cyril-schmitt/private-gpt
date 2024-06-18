@@ -18,7 +18,7 @@ chat_router = APIRouter(prefix="/v1", dependencies=[Depends(authenticated)])
 
 class ChatBody(BaseModel):
     messages: list[OpenAIMessage]
-    use_context: bool = False
+    use_context: bool = True
     context_filter: ContextFilter | None = None
     include_sources: bool = True
     stream: bool = False

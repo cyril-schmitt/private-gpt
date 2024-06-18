@@ -16,7 +16,7 @@ completions_router = APIRouter(prefix="/v1", dependencies=[Depends(authenticated
 class CompletionsBody(BaseModel):
     prompt: str
     system_prompt: str | None = None
-    use_context: bool = False
+    use_context: bool = True
     context_filter: ContextFilter | None = None
     include_sources: bool = True
     stream: bool = False
@@ -28,7 +28,7 @@ class CompletionsBody(BaseModel):
                     "prompt": "How do you fry an egg?",
                     "system_prompt": "You are a rapper. Always answer with a rap.",
                     "stream": False,
-                    "use_context": False,
+                    "use_context": True,
                     "include_sources": False,
                 }
             ]
